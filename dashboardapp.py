@@ -873,7 +873,7 @@ elif st.session_state.current_page == " Tentang":
 st.markdown("---")
 st.markdown("""
 <div style="text-align: center; color: gray;">
-    <p>© 2025 Penelitian AI | Powered by Streamlit</p>
-    <p>Muhammad Dinar Pratama Ilham  | Institut Bisnis dan Informatika Kesatuan</p>
+    <p>© 2025 Penelitian AI | Muhammad Dinar Pratama Ilham </p>
+    <p>Institut Bisnis dan Informatika Kesatuan  | Sistem Informasi </p>
 </div>
 """, unsafe_allow_html=True)
