@@ -546,31 +546,61 @@ if st.session_state.current_page == " Beranda":
                 st.warning("⚠️ Tidak dapat menampilkan statistik deskriptif - variabel komposit belum tersedia")
         
         # Hasil Utama
-        st.markdown("##  Temuan Utama")
-        
-        col1, col2, col3 = st.columns(3)
-        
-        with col1:
-            st.markdown("""
-            **Technology Acceptance Model**
-            - PEOU → PU: β = 0.698, p < 0.000
-            - PU → BI: β = 0.487, p < 0.018
-            - BI → UB: β = 0.836, p < 0.000
+        st.markdown(f"""
+    ##  Metodologi Penelitian
+    
+    **Responden:** {total_responden} profesional pemasaran digital
+    
+    **Variabel Penelitian:**
+    - **X1:** Perceived Usefulness (4 indikator)
+    - **X2:** Perceived Ease of Use (5 indikator) 
+    - **X3:** Behavioral Intention (4 indikator)
+    - **X4:** Use Behavior (3 indikator)
+    - **Y1-Y5:** 5 dimensi strategi pemasaran digital (masing-masing 3 indikator)
+    
+    **Analisis:**
+    - Statistik deskriptif
+    - Analisis korelasi Pearson
+    - Regresi linear (OLS)
+    - Uji signifikansi (α = 0.05)
+    
+    ##  Kesimpulan Utama
+    
+    1. **Model Technology Acceptance Model terbukti valid** dalam menjelaskan perilaku adopsi teknologi AI dalam konteks pemasaran digital.
+    2. **Perceived Ease of Use** memiliki pengaruh signifikan terhadap **Perceived Usefulness** (β = 0.698), yang menunjukkan bahwa semakin mudah teknologi digunakan, semakin besar persepsi terhadap kegunaannya.
+    3. **Behavioral Intention**  berperan sebagai penghubung penting menuju perilaku penggunaan aktual, dengan pengaruh yang sangat kuat (β = 0.836).
+    4. **Use Behavior AI** terhadap teknologi AI memberikan dampak positif dan signifikan terhadap seluruh dimensi strategi pemasaran digital.
+    5. Dampak paling menonjol terlihat pada dimensi **Targeting Audiens** (β = 0.817) dan **Efisiensi Anggaran** (β = 0.792), yang mengindikasikan pentingnya AI dalam mengenali audiens secara tepat dan mendorong interaksi yang lebih kuat.
+
+    
+    ##  Implikasi Praktis
+    
+    - **fokus pada kemudahan penggunaan  (ease of use)** menjadi langkah strategis untuk meningkatkan tingkat adopsi teknologi AI di kalangan pelaku pemasaran digital.
+    - **Penyediaan pelatihan dan dukungan teknis (training & support)** akan memperkuat persepsi pengguna terhadap kemanfaatan AI dalam meningkatkan produktivitas kerja.
+    - **Investasi dalam teknologi AI** terbukti mampu memberikan  **return on investment (ROI)** yang positif, terutama dalam hal efisiensi anggaran, personalisasi konten, dan efektivitas kampanye pemasaran secara menyeluruh.
+    
+    ##  Detail Teknis
+    
+    **Model Regresi yang Digunakan:**
+    1. Model 1: X2 → X1 (Perceived Ease of Use → Perceived Usefulness)
+    2. Model 2: X1, X2 → X3 (Perceived Usefulness, Ease of Use → Behavioral Intention)
+    3. Model 3: X3 → X4 (Behavioral Intention → Use Behavior)
+    4. Model 4-8: X4 → Y1,Y2,Y3,Y4,Y5 (Use Behavior → Digital Marketing Strategies)
+    
+    **Hipotesis yang Diuji:**
+    - H1: Perceived Usefulness berpengaruh positif terhadap Behavioral Intention
+    - H2: Perceived Ease of Use berpengaruh positif terhadap Perceived Usefulness
+    - H3: Perceived Ease of Use berpengaruh positif terhadap Behavioral Intention
+    - H4: Behavioral Intention berpengaruh positif terhadap Use Behavior
+    - H5-H9: Use Behavior berpengaruh positif terhadap 5 dimensi strategi pemasaran digital
+
+    **Regresi yang Diuji:**
+    - Model 1: Perceived Ease of Use terhadap Behavioral Perceived Usefulness
+    - Model 2: Perceived Usefulness dan Perceived Ease of Use terhadap Behavioral Intention
+    - Model 3: Behavioral Intention berpengaruh positif terhadap Use Behavior
+    - Model 4 - 8: Use Behavior  terhadap 5 dimensi strategi pemasaran digital
             """)
-        
-        with col2:
-            st.markdown("""
-            **Dampak pada Targeting & Personalisasi**
-            - UB → Targeting: β = 0.817, p < 0.000
-            - UB → Konten Personal: β = 0.723, p < 0.000
-            """)
-        
-        with col3:
-            st.markdown("""
-            **Dampak pada Efisiensi & Engagement**
-            - UB → Efisiensi Anggaran: β = 0.792, p < 0.001
-            - UB → Engagement: β = 0.754, p < 0.001
-            """)
+            
     
     # Call to Action
     st.markdown("---")
@@ -827,67 +857,8 @@ elif st.session_state.current_page == " Visualisasi":
 # HALAMAN TENTANG
 elif st.session_state.current_page == " Tentang":
     st.title(" Tentang Penelitian")
-    
-    if data is not None:
-        total_responden = len(data)
-    else:
-        total_responden = "N/A"
-    
+        
     st.markdown(f"""
-    ##  Metodologi Penelitian
-    
-    **Responden:** {total_responden} profesional pemasaran digital
-    
-    **Variabel Penelitian:**
-    - **X1:** Perceived Usefulness (4 indikator)
-    - **X2:** Perceived Ease of Use (5 indikator) 
-    - **X3:** Behavioral Intention (4 indikator)
-    - **X4:** Use Behavior (3 indikator)
-    - **Y1-Y5:** 5 dimensi strategi pemasaran digital (masing-masing 3 indikator)
-    
-    **Analisis:**
-    - Statistik deskriptif
-    - Analisis korelasi Pearson
-    - Regresi linear (OLS)
-    - Uji signifikansi (α = 0.05)
-    
-    ##  Kesimpulan Utama
-    
-    1. **Model Technology Acceptance Model terbukti valid** dalam menjelaskan perilaku adopsi teknologi AI dalam konteks pemasaran digital.
-    2. **Perceived Ease of Use** memiliki pengaruh signifikan terhadap **Perceived Usefulness** (β = 0.698), yang menunjukkan bahwa semakin mudah teknologi digunakan, semakin besar persepsi terhadap kegunaannya.
-    3. **Behavioral Intention**  berperan sebagai penghubung penting menuju perilaku penggunaan aktual, dengan pengaruh yang sangat kuat (β = 0.836).
-    4. **Use Behavior AI** terhadap teknologi AI memberikan dampak positif dan signifikan terhadap seluruh dimensi strategi pemasaran digital.
-    5. Dampak paling menonjol terlihat pada dimensi **Targeting Audiens** (β = 0.817) dan **Efisiensi Anggaran** (β = 0.792), yang mengindikasikan pentingnya AI dalam mengenali audiens secara tepat dan mendorong interaksi yang lebih kuat.
-
-    
-    ##  Implikasi Praktis
-    
-    - **fokus pada kemudahan penggunaan  (ease of use)** menjadi langkah strategis untuk meningkatkan tingkat adopsi teknologi AI di kalangan pelaku pemasaran digital.
-    - **Penyediaan pelatihan dan dukungan teknis (training & support)** akan memperkuat persepsi pengguna terhadap kemanfaatan AI dalam meningkatkan produktivitas kerja.
-    - **Investasi dalam teknologi AI** terbukti mampu memberikan  **return on investment (ROI)** yang positif, terutama dalam hal efisiensi anggaran, personalisasi konten, dan efektivitas kampanye pemasaran secara menyeluruh.
-    
-    ##  Detail Teknis
-    
-    **Model Regresi yang Digunakan:**
-    1. Model 1: X2 → X1 (Perceived Ease of Use → Perceived Usefulness)
-    2. Model 2: X1, X2 → X3 (Perceived Usefulness, Ease of Use → Behavioral Intention)
-    3. Model 3: X3 → X4 (Behavioral Intention → Use Behavior)
-    4. Model 4-8: X4 → Y1,Y2,Y3,Y4,Y5 (Use Behavior → Digital Marketing Strategies)
-    
-    **Hipotesis yang Diuji:**
-    - H1: Perceived Usefulness berpengaruh positif terhadap Behavioral Intention
-    - H2: Perceived Ease of Use berpengaruh positif terhadap Perceived Usefulness
-    - H3: Perceived Ease of Use berpengaruh positif terhadap Behavioral Intention
-    - H4: Behavioral Intention berpengaruh positif terhadap Use Behavior
-    - H5-H9: Use Behavior berpengaruh positif terhadap 5 dimensi strategi pemasaran digital
-
-    **Regresi yang Diuji:**
-    - Model 1: Perceived Ease of Use terhadap Behavioral Perceived Usefulness
-    - Model 2: Perceived Usefulness dan Perceived Ease of Use terhadap Behavioral Intention
-    - Model 3: Behavioral Intention berpengaruh positif terhadap Use Behavior
-    - Model 4 - 8: Use Behavior  terhadap 5 dimensi strategi pemasaran digital
-    
-    ---
     
     **Peneliti:** Muhammad Dinar Pratama Ilham
     
