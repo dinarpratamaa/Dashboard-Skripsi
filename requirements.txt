@@ -1,0 +1,12 @@
+streamlit
+pandas
+numpy
+matplotlib.pyplot
+seaborn
+sklearn.linear_model.LinearRegression
+sklearn.metrics.r2_score
+statsmodels.api
+plotly.express
+plotly.graph_objects
+plotly.subplots
+os
