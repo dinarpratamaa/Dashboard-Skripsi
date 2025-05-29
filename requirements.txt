@@ -1,12 +1,8 @@
 streamlit
 pandas
 numpy
-matplotlib.pyplot
+matplotlib
 seaborn
-sklearn.linear_model.LinearRegression
-sklearn.metrics.r2_score
-statsmodels.api
-plotly.express
-plotly.graph_objects
-plotly.subplots
-os
+scikit-learn
+statsmodels
+plotly
