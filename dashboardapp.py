@@ -854,23 +854,20 @@ elif st.session_state.current_page == " Visualisasi":
             fig_scatter.update_layout(height=600, title_text="Hubungan Antar Variabel Kunci")
             st.plotly_chart(fig_scatter, use_container_width=True)
 
-# HALAMAN TENTANG
 elif st.session_state.current_page == " Tentang":
     st.title(" Tentang Penelitian")
-        
-    st.markdown(f"""
     
-    **Peneliti:** Muhammad Dinar Pratama Ilham
-    
-    **Tahun:** 2024 - 2025
-    
-    **Teknologi:** Python, Pandas, Statsmodels, Plotly, Streamlit
-    """)
-    
-    # Tambahan informasi login
-    if not st.session_state.logged_in:
-        st.markdown("---")
-        st.info("💡 **Tips:** Login untuk mengakses analisis lengkap!")
+    col1, col2 = st.columns([1, 2])  # Lebih kecil untuk gambar, lebih lebar untuk teks
+
+    with col1:
+        st.image("fotodinar.jpeg", width=150, caption="Muhammad Dinar Pratama Ilham")  # Ganti dengan nama file fotomu
+
+    with col2:
+        st.markdown(f"""
+        **Peneliti:** Muhammad Dinar Pratama Ilham  
+        **Tahun:** 2024 - 2025  
+        **Institut Bisnis dan Informatika Kesatuan | Sistem Informasi**
+        """)
 
 # Footer
 st.markdown("---")
